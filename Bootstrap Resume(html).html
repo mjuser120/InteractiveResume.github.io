@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+      <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+       <link rel="stylesheet" href="style.css">
+       
+       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+       
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+       
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       
+    
+      <link rel = "stylesheet" 
+         href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+         integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+         crossorigin = "anonymous">
+       
+             <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+         integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+         crossorigin = "anonymous">
+      </script>
+      
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+         integrity =" sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+         crossorigin = "anonymous">
+      </script>
+      
+      <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+         integrity = "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+         crossorigin = "anonymous">
+      </script>
+       
+       <title>Interactive Resume</title>
+       <style>
+         .container {
+            background: skyblue;
+            border: 4px solid black;
+            padding-top: 40px;
+            padding-bottom: 50px;
+             
+             
+             transition: var(--tran);
+         }
+           img{
+               float: left;
+               font-family: Veranda;
+              border-radius: 10%;
+               
+           }
+           img{
+               border: 2px solid black;
+               width: 35px;
+           }
+           
+           .vertical {
+            border-left: 5px solid black;
+            height: 1470px;
+            position:absolute;
+            left: 50%;
+        }
+           b{
+               font-size: 25px;
+           }
+           p{
+               font-size: 20px;
+           }
+           
+           .mt-100{
+  margin-top: 200px;
+}
+.progress {
+  width: 60px;
+  height: 60px !important;
+  float: left; 
+  line-height: 150px;
+  background: none;
+  margin: 20px;
+  box-shadow: none;
+  position: relative;
+}
+.progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.progress .progress-left {
+  left: 0;
+}
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.progress .progress-right {
+  right: 0;
+}
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #000;
+  font-size: 15px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.progress.x65 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x65 .progress-left .progress-bar {
+  animation: loading-65 1.5s linear forwards 1.8s;
+}
+.progress.x90 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x90 .progress-left .progress-bar {
+  animation: loading-90 1.5s linear forwards 1.8s;
+}
+.progress.x80 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x80 .progress-left .progress-bar {
+  animation: loading-80 1.5s linear forwards 1.8s;
+}           
+.progress.x60 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x60 .progress-left .progress-bar {
+  animation: loading-60 1.5s linear forwards 1.8s;
+} 
+.progress.x70 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x70 .progress-left .progress-bar {
+  animation: loading-70 1.5s linear forwards 1.8s;
+}
+ .progress.x75 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x75 .progress-left .progress-bar {
+  animation: loading-75 1.5s linear forwards 1.8s;
+}
+ .progress.x85 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x85 .progress-left .progress-bar {
+  animation: loading-85 1.5s linear forwards 1.8s;
+}             
+ .progress.x50 .progress-bar {
+  border-color: #28BDC4;
+}
+.progress.x50 .progress-right .progress-bar {
+  animation: loading-50 1.5s linear forwards;
+}
+           
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes loading-65 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+  }
+}
+@keyframes loading-90 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+}
+@keyframes loading-80 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg);
+  }
+}
+@keyframes loading-60 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@keyframes loading-70 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(70deg);
+    transform: rotate(70deg);
+  }
+}
+@keyframes loading-75 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(95deg);
+    transform: rotate(95deg);
+  }
+}
+@keyframes loading-85 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(130deg);
+    transform: rotate(130deg);
+  }
+}
+@keyframes loading-50 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}   
+           
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+           
+*{
+    font-family: 'Poppins', sans-serif;   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}          
+:root{
+    --body-color: #D6DBDF;
+    --sidebar-color: #FFF;
+    --primary-color: #52CBD1;
+    --primary-color-light: #F6F5FF;
+    --text-color: #707070;
+    
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    
+}
+           
+body{
+  height: 100vh;
+  background: var(--body-color);
+    position: relative;
+             height:  100vh;
+             left: 250px;
+             width: calc(100% - 250px);
+}           
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+ .sidebar.close{
+    width: 88px;           
+}
+                     
+.sidebar .text{
+    font-size: 16px;
+    font-weight: 500;  
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+ }
+.sidebar.close .text{
+   opacity: 0;          
+}           
+.sidebar .image{
+   min-width: 70px;
+   display: flex;
+   align-items: center;
+    justify-content: center;
+}          
+
+.sidebar li{
+   height: 50px;
+   background: #EBF5FB;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+           
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    font-size: 30px;
+    color: black;
+}       
+.sidebar .text{
+    color: var(--text-color);
+    transition: var(--tran-02);
+}           
+.sidebar header{
+   position: relative;
+}           
+.sidebar .image-text img{
+      width: 60px;         
+      border-radius: 6px;                        
+}   
+.sidebar header .image-text{
+      display: flex;
+      align-items: center;
+} 
+           
+.header .image-text .header-text{
+     display: flex;
+    flex-direction: column;
+}          
+.header-text .name{
+   font-weight: 600; 
+}
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transition: var(--tran-03);
+}
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+}           
+ 
+.sidebar .menu{
+   margin-top: 35px;
+    
+}          
+.sidebar .search-box{
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+.search-box input{
+   height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+.sidebar li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   text-decoration: none;
+     border-radius: 6px;
+    transition: var(--tran-04);
+}
+.sidebar li a:hover{
+    background: var(--primary-color);
+    transform: var(--tran-030);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+   color: var(--sidebar-color);            
+}         
+.sidebar .menu-bar{
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar ~ .body{
+      left: 88px;
+    width: calc(100% - 88px);
+ } 
+      </style>
+       
+   </head>
+   
+   <body>
+       <nav class="sidebar close">
+         <header>
+            <div class="image-text">
+              <span class="image">
+                <img src="follow.webp" alt="follow">
+                </span>
+                
+                <div class="text header-text">
+                <span class="name">FOLLOW ME!</span>
+                </div>
+            </div>
+             
+             <i class='bx bx-chevron-right toggle'></i>
+        </header>
+           <div class="menu-bar">
+               <div class="menu">
+                   <li class="search-box">
+                       <i class='bx bxs-search icon'></i>
+                        <input type="text" placeholder="Search...">
+                   </li> 
+               <ul class="menu-links">
+                   <li class="nav-link">
+                    <a href="Bootstrap Resume(html).html">
+                       <i class='bx bxs-user icon'></i>
+                        <span class="text nav-text">&nbsp;PROPILE OF RESUME</span>
+                       </a>
+                       
+                   </li>
+                   <li class="nav-link">
+                    <a href="https://www.facebook.com/aironrossmacapagal123">
+                       <i class='bx bxl-facebook-circle icon'></i>
+                        <span class="text nav-text">&nbsp;FACEBOOK</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                    <a href="https://www.instagram.com/markjonathanreytos/">
+                       <i class='bx bxl-instagram-alt icon' ></i>
+                        <span class="text nav-text">&nbsp;INSTAGRAM</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                    <a href="https://twitter.com/MarkReytos">
+                       <i class='bx bxl-twitter icon' ></i>
+                        <span class="text nav-text">&nbsp;TWITTER</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                    <a href="https://discord.com/channels/@me">
+                       <i class='bx bxl-discord icon'></i>
+                        <span class="text nav-text">&nbsp;DISCORD</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                    <a href="mailto:reytos.mj.bsinfotech@gmail.com">
+                       <i class='bx bx-envelope icon'></i>
+                        <span class="text nav-text">&nbsp;GMAIL</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                    <a href="https://www.google.com/maps/place/47+Santo+Ni%C3%B1o+St,+Quezon+City,+Metro+Manila/@14.6960705,121.0836046,3a,75y,202.96h,79.2t/data=!3m6!1e1!3m4!1s8xNtG0rh7caPraGnhFZQzg!2e0!7i16384!8i8192!4m5!3m4!1s0x3397ba0ba2105d8d:0x6bcd59f8d565074e!8m2!3d14.6961242!4d121.0836149">
+                       <img src ="location.png" alt="location" style="border: none">
+                        <span class="text nav-text">&nbsp;LOCATION</span>
+                       </a>
+                   </li>
+                   </ul>
+               </div>
+           </div>
+    </nav>
+       
+       
+         <script type="text/javascript" language="javascript">
+        const body = document.querySelector("body"),
+              sidebar = body.querySelector(".sidebar"),
+              toggle = body.querySelector(".toggle"),
+              searchBtn = body.querySelector(".search-box");
+           
+           toggle.addEventListener("click", () =>{
+               sidebar.classList.toggle("close");
+    
+           });
+    </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+       
+       <br>
+       <br>
+       <br>
+      <div class="container">
+          <img src = "mjpicture.jpg" alt="mjpicture" style="width:200px; height: 200px;">
+          <div class = "row">
+           <div class = "col-sm-8"><br></div>
+       </div>
+           <div class = "row">
+           <div class = "col-md-8">
+               <div data-aos="fade-right">
+               <h2>&nbsp;&nbsp;Mark Jonathan E. Reytos</h2>
+               </div>
+               </div>
+          </div>
+          <div class = "row" >
+              <div class = "col-md-8" style="font-size: 18px;"><div data-aos="fade-down"><br>&nbsp;&nbsp;&nbsp;Birth: August - 15, 2002<br style="font-size: 18px;">&nbsp;&nbsp;&nbsp;Language: Filipino </div></div>
+          </div>
+          
+          <div class = "row">
+              <div class = "col-md-8" style="font-size: 18px;"><div data-aos="fade-down">&nbsp;&nbsp;&nbsp;National: Philippines<br>&nbsp;&nbsp;&nbsp;Contact Number: 09274020654</div></div>
+       </div>
+       </div>
+       <div class = "container border: 4px solid black shadow-lg p-3 mb-10" style="background: #EBF5FB ">
+           <div class = "vertical"></div>
+           <div class = "row ">
+               <div class = "col-sm-6 " >
+                   <img src="about%20me.png" alt="about me">
+                   <div data-aos="fade-right">   
+                   <b>&nbsp;ABOUT ME</b>
+                   </div>
+               </div>
+               
+               <div class = "col-sm-6 "><img src = "education.jpg" alt="education">
+                   <div data-aos="fade-right"><b>&nbsp;EDUCATION</b></div></div>
+           </div>
+             <div class = "row ">
+               <div class = "col-sm-6 " style="text-align: justify">
+                   <div data-aos="fade-down">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am the type of person that wants to make things done immediately. If I make any assignment or work at home, I usually ensure to do it as soon as possible so I can be productive and finish my tasks immediately. But, if there are instances that I wouldn’t be able to finish it, or I need certain help because I am facing difficulties, I am never hesitant to ask for other people’s help so I can gain a better insight on my work. I am a very shy person and there are times that I am not that good in communicating with other people, that’s why sometimes I am misunderstood. But, I am a type of person who is always willing to listen with other people and is always willing to learn to improve myself and my flaws.
+                   </p>
+               </div>
+                 </div>
+               <div class = "col-sm-6" ><table border="0" style="width:100%; font-size: 20px;">
+            <tr><td><div data-aos="fade-down">
+	       <b style="font-size: 20px">Elementary School | 2008 - 2011</b>
+            <li>Serano Elementary School(Grade 1 to 3)   </li>
+                </div></td></tr>
+        <tr><td><div data-aos="fade-down">
+            <b style="font-size: 20px">Elementary School | 2011 - 2014</b>
+            <li>Andress Bonifacio elementary School(Grade 4 to 6)</li>
+            </div></td></tr>
+        <tr><td><div data-aos="fade-down">
+            <b style="font-size: 20px">Junior High School | 2014 - 2018</b>
+            <li>Caloocan High Scholl(Grade 7 to 10 or 1st year to 4th year)</li>
+            </div></td></tr>
+        <tr><td><div data-aos="fade-down">
+            <b style="font-size: 20px">Senior High School | 2018 - 2020</b>
+            <li>System Pluss Computer College(Grade 11 to 12 or 1st year to 2nd year)</li>
+            </div></td></tr>
+        <tr><td><div data-aos="fade-down">
+            <b style="font-size: 20px">1st Year College | 2020 - 2021</b>
+            <li>EARIST MANILA</li>
+            </div></td></tr>
+        <tr><td><div data-aos="fade-down">
+            <b style="font-size: 20px">2nd Year College | 2021 present</b>
+            <li>EARIST MANILA</li>
+            </div></td></tr>
+            </table>
+                 </div>
+           </div>
+           <div class = "row ">
+               <div class = "col-sm-6 "><br><img src="skills.jpg" alt="skills">
+                   <div data-aos="fade-right"><b>&nbsp;SKILLS</b></div></div>
+               <div class = "col-sm-6 "><br><img src="experience.png" alt="experince"><div data-aos="fade-right"><b>&nbsp;EXPERIENCE</b></div></div>
+           </div>
+           <div class = "row ">
+               <div class = "col-sm-6 " ><table border="0" style="width:80%; font-size: 20px;" >
+                   
+            <tr>
+        <td><div data-aos="fade-down">
+            <li>Troubleshotting of computer</li></div></td>
+        <td><div data-aos="fade-down">
+            <div class="progress x80">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">80%</div>
+               </div>
+            </div>
+                </td>
+            </tr>
+            <tr>
+        <td><div data-aos="fade-down">
+            <li>Software development</li></div></td>
+        <td><div data-aos="fade-down">
+            <div class="progress x70">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">70%</div>
+               </div>
+            </div>
+                </td>
+            </tr>
+            <tr>
+        <td><div data-aos="fade-down">
+            <li>Programming</li></div></td>
+        <td><div data-aos="fade-down">
+            <div class="progress x85">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">85%</div>
+               </div>
+            </div>
+                </td>
+            </tr>
+            <tr>
+        <td><div data-aos="fade-down">
+            <li>Compute Hardware Knowledge</li></div></td>
+        <td><div data-aos="fade-down">
+            <div class="progress x70">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">70%</div>
+               </div>
+            </div>
+                </td>
+            </tr>
+            <tr>
+        <td><div data-aos="fade-down">
+            <li>Computer Software Knowledge</li></div></td>
+        <td><div data-aos="fade-down">
+            <div class="progress x70">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">70%</div>
+               </div>
+            </div>
+                </td>
+            </tr>
+                   
+                   </table>
+               </div>
+               <div class = "col-sm-6 " ><table border="0" style="width:100%; font-size: 20px;">
+            <tr ><td><div data-aos="fade-down">
+        <li >Able to fix the print</li>
+        <li>I work Immerion on Mr.Wndell in Technical for Computer lab in Senior High</li>
+	    <li>Download Application(Java, Visual Studio, Adobe photoshop, Blender, iconic)</li>
+	    <li>Microsoft Office(MS Word, Excel, PowerPoint, Access, and etc...)</li>
+	    <li>Basic Computer Programming (C++, C#, C, and etc...)</li>
+	    <li>Basic Web Developer using html and CSS</li>
+	    <li>Basic Create Animation using Blender</li>
+                </div>
+        </td>
+            </tr>
+        </table>
+        </div>
+           </div>
+           <div class = "row ">
+               <div class = "col-sm-7 "><br><img src="hobbies.png" alt="hobbies"><div data-aos="fade-right"><b>&nbsp;HOBBIES</b></div></div>
+           </div>
+           <div class = "row ">
+               <div class = "col-sm-7 "><table border="0" style="width:85%">
+                   <tr>
+            <td><div data-aos="fade-down"><p>Sports</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x65">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">65%</div>
+               </div>
+                </div>
+                       </td>
+            <td><div data-aos="fade-down"><p>Online Games</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x90">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">90%</div>
+               </div>
+                </div>
+                       </td>
+                   </tr>
+                    <tr>
+            <td><div data-aos="fade-down"><p>Onffline Games</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x80">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">80%</div>
+               </div>
+                </div>
+                        </td>
+         <td><div data-aos="fade-down"><p>Movie</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x60">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">60%</div>
+               </div>
+                </div>
+                        </td>
+                   </tr>
+                    <tr>
+           <td><div data-aos="fade-down"><p>Anime Movie</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x75">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">75%</div>
+               </div>
+                </div>
+                        </td>
+        <td><div data-aos="fade-down"><p>Anime Series</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x90">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">90%</div>
+               </div>
+                </div>
+                        </td>
+                   </tr>
+                    <tr>
+            <td><div data-aos="fade-down"><p>Listening Music</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x75">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">75%</div>
+               </div>
+                </div>
+                        </td>
+        <td><div data-aos="fade-down"><p>Playing Instrument</p></div></td>
+            <td><div data-aos="fade-down">
+                <div class="progress x50">
+                 <span class="progress-left">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <span class="progress-right">
+                                   <span class="progress-bar"></span>
+                 </span>
+                 <div class="progress-value">50%</div>
+               </div>
+                </div>
+                        </td>              
+                   </tr>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </body>
+</html>
